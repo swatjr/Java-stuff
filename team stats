@@ -1,0 +1,47 @@
+const team = {
+  _players:[
+    {firstName:'Fred',lastName: 'Jackson',age:25},
+    {firstName:'John',lastName: 'Moxley',age: 30,},
+    {firstName: 'Chris',lastName: 'Jericho',age:40}
+  ],
+  _games:[
+    {opponent:'Jets',teamPoints:42,opponentPoints:15,},
+    {opponent:'Broncos',teamPoints:30,opponentPoints:20},
+    {opponent:'Bills',teamPoints:20,opponentPoints:30}
+    ],
+
+ get games(){
+    return this._games;
+  },
+ 
+  get players(){
+    return this._players;
+  },
+  
+  addPlayer(firstName,lastName,age){
+     let player ={
+       firstName: firstName,
+       lastName: lastName,
+       age:age
+     } ;
+     return this.players.push(player)
+    },
+  addgame(opponent,opponentPoints,teamPoints){
+     let game ={
+       opponent: opponent,
+      opponentPoints: opponentPoints,
+       teamPoints:teamPoints
+     } ;
+     return this.games.push(game)
+    }
+  };
+       
+
+team.addPlayer('Steph','Curry','28')
+  team.addPlayer('Lisa','Leslie','44')
+  team.addPlayer('Bugs','Bunny','76')
+team.addgame('Jaguars',25,20)
+team.addgame('Ravens',30,40)
+team.addgame('Cowboys',25,35)
+console.log(team.players)
+console.log(team.games)
